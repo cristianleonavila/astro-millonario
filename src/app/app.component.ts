@@ -1,6 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
 import { NumeroGanador } from './numero-ganador';
-import { SignosZodiacales } from './signos';
 import { AstroMillonarioService } from './components/tabla-historial/astro-millonario.service';
 import { TablaHistorialComponent } from "./components/tabla-historial/tabla-historial.component";
 
@@ -21,7 +20,10 @@ export class AppComponent {
   generarNumero () {
     const numero = this.astroService.generarNumeroGanador();
     this.numeroGanador.set(numero);
-    this.historial.set(this.astroService.recuperarHistorial());
+    this.historial.update(current => {
+      current.push(numero);
+      return current;
+    });
   }
 
   borrarHistorial () {
