@@ -19,6 +19,10 @@ export class AstroMillonarioService {
     return numero;
   }
 
+  borrarHistorial() {
+    localStorage.removeItem('historial_numeros');
+  }
+
   private guardarHistorial(numero: NumeroGanador) {
     const historial = this.recuperarHistorial();
     historial.push(numero);

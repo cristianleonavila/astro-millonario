@@ -24,4 +24,12 @@ export class AppComponent {
     this.historial.set(this.astroService.recuperarHistorial());
   }
 
+  borrarHistorial () {
+    this.astroService.borrarHistorial();
+    this.historial.set([]);
+  }
+
+  nuevoNumero() {
+    this.numeroGanador.set(null);
+  }
 }

@@ -1,5 +1,7 @@
 <section class="container mx-auto mt-3 p-4">
-  <button class="btn btn-primary" (click)="generarNumero()">Generar Número</button>
+  <button class="btn btn-primary mr-2" (click)="generarNumero()">Generar Número</button>
+  <button class="btn btn-error  mr-2 text-white" (click)="borrarHistorial()">Borrar Historial</button>
+  <button class="btn btn-soft" (click)="nuevoNumero()">Nuevo Número</button>
   <div class="divider"></div>
   <span class="text-5xl">{{numeroGanador()?.numero}} </span>
   <span class="text-5xl text-accent ml-4"> {{numeroGanador()?.signo}}</span>
