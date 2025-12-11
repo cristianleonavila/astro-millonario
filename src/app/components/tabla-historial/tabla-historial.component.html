@@ -1,0 +1,24 @@
+  <div class="overflow-x-auto">
+    <table class="table table-zebra">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Número</th>
+          <th>Signo</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of data(); track $index) {
+        <tr>
+          <td>{{item.fecha}}</td>
+          <td>{{item.numero}}</td>
+          <td>{{item.signo}}</td>
+        </tr>
+        } @empty {
+          <tr>
+            <td colspan="3" class="text-accent">No se han registrado números</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>

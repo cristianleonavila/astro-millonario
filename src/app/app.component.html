@@ -1,29 +1,9 @@
 <section class="container mx-auto mt-3 p-4">
-  <button class="btn btn-primary" (click)="generarNumeroGanador()">Generar Número</button>
+  <button class="btn btn-primary" (click)="generarNumero()">Generar Número</button>
   <div class="divider"></div>
-  <span class="text-5xl">{{numero()}} </span>
-  <span class="text-5xl text-accent ml-4"> {{signo()}}</span>
+  <span class="text-5xl">{{numeroGanador()?.numero}} </span>
+  <span class="text-5xl text-accent ml-4"> {{numeroGanador()?.signo}}</span>
   <div class="divider"></div>
   <h2 class="text-2xl">Historial</h2>
-  <div class="overflow-x-auto">
-    <table class="table table-zebra">
-      <!-- head -->
-      <thead>
-        <tr>
-          <th>Fecha</th>
-          <th>Número</th>
-          <th>Signo</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (item of historial(); track $index) {
-        <tr>
-          <td>{{item.fecha}}</td>
-          <td>{{item.numero}}</td>
-          <td>{{item.signo}}</td>
-        </tr>
-        }
-      </tbody>
-    </table>
-  </div>
+  <app-tabla-historial [data]="historial()" />
 </section>
