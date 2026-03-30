@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { SignosZodiacales } from '../../signos';
 import { NumeroGanador } from '../../numero-ganador';
 
